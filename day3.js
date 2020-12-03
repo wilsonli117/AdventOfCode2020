@@ -57,6 +57,7 @@ for (let i = 0; i < mapByLine.length; i++) {
     }
 
     if (mapByLine[i][y] === '#') {
+        
         count4 += 1;
     }
     y += 7
