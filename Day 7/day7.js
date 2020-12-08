@@ -77,38 +77,3 @@ const bfsTraversal = (start) => {
 
 console.log(bfsTraversal('shiny gold bags'));
 
-// let tests2 = [/shiny gold bags(?= contain)/];
-
-// let bagSum = 0;
-
-// while(tests2.length) {
-//     let currentRegex2 = tests2.shift();
-    
-//     for (let i = 0; i < rulesByLine.length; i++) {
-//         let line = rulesByLine[i];
-        
-//         if(line.match(currentRegex2)) {
-//             let currentTest = line.split('contain')[0].trim();
-            
-//             let newTests = line.split('contain')[1].slice(1, -1).split(', ');
-           
-//             for (let k = 0; k < newTests.length; k++) {
-//                 let newTest = newTests[k].slice(2);
-//                 if (newTest[newTest.length - 1] !== 's') newTest += 's';
-//                 bagSum += parseInt(newTests[k][0]);
-
-//                 for(let j = 0; j < searched[newTest]; j++) {
-//                     console.log(newTest)
-                    
-//                     tests2.push(new RegExp(`${newTest}(?= contain)`));
-
-//                 }
-            
-            
-//             }
-//         } else {}
-//     }
-// }
-
-// console.log(searched);
-// console.log(bagSum);
