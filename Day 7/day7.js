@@ -35,10 +35,10 @@ while (tests.length) {
         let line = rulesByLine[i];
        
         if (line.match(currentRegex)) {
-            // console.log(line);
+            
             let currentTest = line.split('contain')[0].trim();
             searched[currentTest] = {};
-            // console.log(currentTest);
+            
             if (!line.match(/no other bags/)) {
                 let newTests = line.split('contain')[1].slice(1, -1).split(', ');
                     for (let k = 0; k < newTests.length; k++) {
@@ -60,7 +60,7 @@ const bfsTraversal = (start) => {
 
     while (queue.length) {
         let currentKey = queue.shift();
-        console.log(currentKey);
+        
         let keys = Object.keys(searched[currentKey]);
         if (keys.length) {
             keys.forEach(key => {
