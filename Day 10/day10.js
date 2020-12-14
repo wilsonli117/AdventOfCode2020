@@ -19,7 +19,7 @@ const joltDifferences = (arr) => {
     let oneDiff = 1;
     let threeDiff = 1;
 
-    for(let i = 0; i < sortedArr.length - 1; i++) {
+    for (let i = 0; i < sortedArr.length - 1; i++) {
         if (sortedArr[i + 1] - sortedArr[i] === 1) oneDiff += 1;
         if (sortedArr[i + 1] - sortedArr[i] === 3) threeDiff += 1;
     }
