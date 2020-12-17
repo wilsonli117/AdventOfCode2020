@@ -71,4 +71,107 @@ function manhattanDist(instructions) {
     return Math.abs(eastWest) + Math.abs(northSouth);
 }
 
-console.log(manhattanDist(instructions));
+// console.log(manhattanDist(instructions));
+
+function manhattanDist2(instructions) {
+
+    let waypoint = { eastWest: 10, northSouth: 1}
+    let eastWest = 0;
+    let northSouth = 0; 
+    let currAngle = 0;
+
+    for(let i = 0; i < instructions.length; i++) {
+        let instruction = instructions[i][0];
+        let value = parseInt(instructions[i].slice(1));
+
+        switch(instruction) {
+            case 'N':
+                waypoint.northSouth += value;
+                break;
+
+            case 'S':
+                waypoint.northSouth -= value;
+                break;
+
+            case 'E':
+                waypoint.eastWest += value;
+                break;
+
+            case 'W':
+                waypoint.eastWest -= value;
+                break;
+
+            case 'L':
+                currAngle -= value;
+                break;
+
+            case 'R':
+                currAngle += value;
+                break;
+
+            case 'F':
+                eastWest += value * waypoint.eastWest;
+                northSouth += value * waypoint.northSouth;
+                break;
+        }
+
+
+        let change;
+        let wayPointEW = waypoint.eastWest;
+        let wayPointNS = waypoint.northSouth;
+
+        if (currAngle >= 90) {
+            change = Math.floor(currAngle / 90);
+            if (change > 4) change = change % 4; 
+            currAngle = currAngle % 90;
+
+            switch(change) {
+                case 1:
+                    waypoint.eastWest = wayPointNS;
+                    waypoint.northSouth = -wayPointEW;
+                    break;
+
+                case 2:
+                    waypoint.eastWest = -wayPointEW;
+                    waypoint.northSouth = -wayPointNS;
+                    break;
+
+                case 3:
+                    waypoint.eastWest = -wayPointNS;
+                    waypoint.northSouth = wayPointEW;
+                    break;
+            }
+
+
+            
+        }
+
+        if (currAngle <= -90) {
+            change = Math.floor(currAngle / -90);
+            if (change > 4) change = change % 4; 
+            currAngle = currAngle % 90;
+
+            switch (change) {
+                case 1:
+                    waypoint.eastWest = -wayPointNS;
+                    waypoint.northSouth = wayPointEW;
+                    break;
+
+                case 2:
+                    waypoint.eastWest = -wayPointEW;
+                    waypoint.northSouth = -wayPointNS;
+                    break;
+
+                case 3:
+                    waypoint.eastWest = wayPointNS;
+                    waypoint.northSouth = -wayPointEW;
+                    break;
+            }
+            
+        }
+    }
+
+    return Math.abs(eastWest) + Math.abs(northSouth);
+}
+
+console.log(manhattanDist2(instructions));
