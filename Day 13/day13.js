@@ -29,7 +29,7 @@ function earliestTimestamp(notes) {
 
     while (searching) {
             let pass = true;
-            
+
             for(let i = 1; i < busIDs.length; i++) {
                 if (busIDs[i] === 'x') continue;
                 if (!((test + i) % busIDs[i] === 0)) {
@@ -52,3 +52,4 @@ function earliestTimestamp(notes) {
 }
 
 console.log(earliestTimestamp(notes));
+//need to refactor using chinese remainder theroem
