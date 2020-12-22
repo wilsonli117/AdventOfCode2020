@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { cursorTo } = require("readline");
 const input = fs.readFileSync("./input.txt").toString();
 let notes = input.split("\n")
 
