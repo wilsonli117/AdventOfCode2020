@@ -87,8 +87,6 @@ function findFloatingAddresses(address, memo=[]) {
     
 }
 
-// console.log(findFloatingAddresses('000000000000000000000000000000X1101X'))
-
 function numToBitConvert(num) {
     let result = '000000000000000000000000000000000000'.split('');
 
