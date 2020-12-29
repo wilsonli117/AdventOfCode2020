@@ -1,7 +1,7 @@
 input = [20, 0, 1, 11, 6, 3]
 
 function elfMemoryGame(starting, target) {
-    let memory = new Map();
+    let memory = new Map(); 
 
     starting.forEach((num, idx) => {
         memory.set(num, idx + 1);
