@@ -38,4 +38,18 @@ function parseTicketRules(rules) {
 
 }
 
-console.log(findTicketErrorRate(notes));
+function findDeparture(notes) {
+    const rules = Object.values(parseTicketRules(notes[0].split('\n')));
+    const myTicket = notes[1].match(/\d+/g).map(x => parseInt(x));
+    const nearbyTickets = notes[2].split('\n').slice(1).map(ticket => ticket.split(',').map(num => parseInt(num)));
+
+    console.log(nearbyTickets);
+}
+
+findDeparture(notes);
+
+function removeInvalidTickets(notes, rules) {
+    
+
+
+}
