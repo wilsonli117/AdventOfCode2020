@@ -53,5 +53,4 @@ function earliestTimestamp(notes) {
     return earliestTime % BigInt(N);
 }
 
-console.log(earliestTimestamp(notes));
-//need to refactor using chinese remainder theroem
+// console.log(earliestTimestamp(notes));
